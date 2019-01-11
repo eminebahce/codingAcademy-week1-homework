@@ -1,5 +1,28 @@
-img {
-    width: 300px;
+#inn {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 175px;
     height: auto;
-    margin-top: 50px;
+    margin-left: 50px;
+    cursor: pointer;
 }
+
+#dagger,
+#bag {
+    width: 175px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    cursor: pointer;
+}
+
+h3 {
+    position: relative;
+    padding-top: 20px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+
+#parentProgressBar {}

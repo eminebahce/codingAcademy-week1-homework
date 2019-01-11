@@ -1,7 +1,7 @@
 // Write your JS here
 
 const hero = {
-    name: '',
+    name: 'SailorMoon',
     heroic: true,
     inventory: [],
     health: 10,
@@ -9,14 +9,32 @@ const hero = {
 };
 
 const rest = (obj) => {
-    hero.health = 10;
+    obj.health = 10;
     return obj;
 };
 
-const pickUpItem = (heroLike, obj) => {
-    heroLike.inventory.push(weapon);
+const pickUpItem = (hero, weapon) => {
+    hero.inventory.push(weapon);
 };
 
-const equipWeapon = () => {
+const equipWeapon = (hero) => {
+    if (hero.inventory.length != 0) {
+        hero.weapon = hero.inventory[0];
+    }
+};
 
+const weaponBag = () => {
+    equipWeapon(hero);
+};
+
+const reset = () => {
+    rest(hero);
+};
+
+const pickUp = () => {
+    const weapon = {
+        type: 'dagger',
+        damage: 2
+    };
+    pickUpItem(hero, weapon);
 };
