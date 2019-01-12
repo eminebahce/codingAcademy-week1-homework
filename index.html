@@ -8,29 +8,135 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="onloadInformation()">
+
     <!-- YOUR HTML HERE -->
+
     <div class="container">
-        <h3>Sailor Moon</h3>
-        <div class="progress mb-3 mt-1" style="height:20px; width: 350px;" id="parentProgressBar">
-            <div class="progress-bar bg-success bar1" style="width:50%" role="progressbar">
-                Health
+        <div class="row">
+            <!--Sailor Moon Column-->
+            <div class="col">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <h3 id="firstHeroName"></h3>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8 progress mb-3 mt-1" style="height:20px; width:50px;" id="parentProgressBar1">
+                        <div class="progress-bar bg-success bar1" style="width:100%" role="progressbar" id="progressBarHero">
+                            Health
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-sm btn-danger" onclick="enemyAttach(event)">Attack to Enemy!</button>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <img id="inn" src="images/sailor-moon-2.png" onclick="reset()">
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-3">
+                        <img id="dagger" src="images/weapon2.png" onclick="pickUp()">
+                    </div>
+                    <div class="col-3">
+                        <img id="bag" src="images/sailormoonbag.png" onclick="weaponBag()">
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <table>
+                            <thead></thead>
+                            <tbody>
+                                <tr>
+                                    <td id="heroName"> </td>
+                                    <td id="heroNameValue">Sailor Moon</td>
+                                </tr>
+                                <tr>
+                                    <td id="heroHealth">Health </td>
+                                    <td id="heroHealthValue">10</td>
+                                </tr>
+                                <tr>
+                                    <td id="weaponType">Weapon Type </td>
+                                    <td id="weaponTypeValue"> </td>
+                                </tr>
+                                <tr>
+                                    <td id="weaponDamage">Wepon Damage </td>
+                                    <td id="weponDamageValue">2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <form>
+                            <div class="form-group mt-3">
+                                <label for="newHeroName">Set new hero name :</label>
+                                <input id="newHeroName" type="text" class="form-control form-control-sm">
+                            </div>
+                            <div class="btn-group float-right">
+                                <button type="submit" class="btn btn-primary btn-sm" onclick="setNewHeroName(event)">Set Name</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            </div>
+            <!--Dark Lady Column-->
+            <div class="col" id="enemy">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <h3 id="secondHeroName"></h3>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8 progress mb-3 mt-1" style="height:20px; width:50px;" id="parentProgressBar2">
+                        <div class="progress-bar bg-success bar1" style="width:100%" role="progressbar" id="progressBarEnemy">
+                            Health
+                        </div>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-sm btn-danger" onclick="heroAttach(event)">Attack to Hero!</button>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <img id="inn2" src="images/Wicked_Lady.gif" onclick="enemyDisappear()">
+                    </div>
+                    <div class="col-4"></div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <!--div class="row">-->
-        <div class="col">
-            <img id="inn" src="images/sailor-moon-2.png" onclick="reset()">
-            <div class="col">
-                <img id="dagger" src="images/weapon2.png" onclick="pickUp()">
-                <img id="bag" src="images/SailorMoonBag.jpg" onclick="weaponBag()">
-            </div>
-        </div>
-        <!--</div>-->
     </div>
 
-    <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
+    <!--I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
     <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
     <div id="mocha"></div>
 

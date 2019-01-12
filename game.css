@@ -1,20 +1,33 @@
+body {
+    background-color: rgb(209, 177, 146) !important;
+}
+
 #inn {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: flex-start;
-    width: 175px;
+    width: 185px;
     height: auto;
-    margin-left: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#inn2 {
+    width: 160px;
+    height: auto;
     cursor: pointer;
 }
 
-#dagger,
-#bag {
-    width: 175px;
+#dagger {
+    width: 100px;
     height: auto;
     margin-top: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#bag {
+    width: 80px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 
@@ -25,4 +38,6 @@ h3 {
     margin-bottom: 50px;
 }
 
-#parentProgressBar {}
+parentProgressBar1 {
+    padding-right: 100px !important;
+}
