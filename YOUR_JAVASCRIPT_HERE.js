@@ -35,7 +35,7 @@ const rest = (obj) => {
 const pickUpItem = (hero, weapon) => {
     //console.log(weapon.type);
     hero.inventory.push(weapon);
-    document.getElementById('dagger').src = "images/noitem.png";
+    document.getElementById('dagger').src = "images/noItem.png";
 };
 
 const equipWeapon = (hero) => {
